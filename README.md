@@ -1,27 +1,67 @@
-# ProjectHubApp
+# ***ProjectHub Guide***
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+## **Introduction**
 
-## Development server
+Welcome to ProjectHub, which helps you manage your projects, team members, and tasks. This guide will walk you through the key features of the platform, helping you manage your projects effortlessly.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## **Platform Access**
 
-## Code scaffolding
+Access the ProjectHub platform through **[https://project-demo.com](https://project-demo.com/)**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## **Feature Walkthrough**
 
-## Build
+Watch our guided video walkthrough: **[Link to Feature Walkthrough](https://youtube-link-to-walkthrough/)**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## **Key Features**
 
-## Running unit tests
+- Register/Login various users based on their role including Admin, Project Manager, Team Members.
+- Create Projects and assign Project Managers and Team Members to them.
+- Create Tasks in each Project and also define sub-tasks(if any).
+- Manage and build teams and define their team members.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## **Installation & Getting Started**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone the repository: **`git clone <https://github.com/VeeranganaMalav/ProjectHub.git>`**
+2. Install dependencies: **`npm install`**
+3. Start the guided tour: **`npm start`**
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## **API Endpoints**
+
+### **Authentication**
+
+- **`POST /api/auth/register`** - Register a new user.
+- **`POST /api/auth/login`** - Log in an existing user.
+- **`GET /api/users`** - Retrieve all users.
+- **`GET /api/users/{id}`** - Retrieve an existing user.
+
+### **Project**
+
+- **`GET /api/projects`** - Retrieve all projects.
+- **`GET /api/projects/:id`** - Retrieve project details.
+- **`POST /api/projects/create`** - Create a new project.
+- **`PUT /api/projects/{id}/update`** - Update project details by id.
+- **`DELETE /api/projects/{id}/delete`** - Delete project details by id.
+
+### **Task**
+
+- **`GET /api/tasks`** - Retrieve all tasks.
+- **`GET /api/tasks/:id`** - Retrieve all tasks details.
+- **`POST /api/tasks/create`** - Create a new task.
+- **`PUT /api/tasks/{id}/update`** - Update task details by id.
+- **`DELETE /api/tasks/{id}/delete`** - Delete task details by id.
+
+### **Team**
+
+- **`GET /api/teams`** - Retrieve all teams.
+- **`GET /api/teams/:id`** - Retrieve all teams details.
+- **`POST /api/teams/create`** - Create a new team.
+- **`PUT /api/teams/{id}/update`** - Update teams details by id.
+- **`DELETE /api/teams/{id}/delete`** - Delete team details by id.
+
+## **Technology Stack**
+
+- Front-end: React.js
+- Back-end: Node.js, Express.js
+- Database: MySQL/MongoDB
