@@ -1,0 +1,11 @@
+<div *ngIf="project">
+    <h2>Project Details</h2>
+    <h4>Project Description :- {{ project.description }}</h4>
+    <p>Start Date :-{{ project.startDate }}</p>
+    <p>End Date :- {{ project.endDate }}</p>
+    <h4 *ngIf="projectManager">Project Manager :- {{ projectManager.name }}</h4>
+    <h4 *ngIf="teamMembers && teamMembers.length > 0">Team Members :- </h4>
+    <ul *ngFor="let member of teamMembers">
+        <li>{{ member.name }}</li>
+    </ul>
+</div>

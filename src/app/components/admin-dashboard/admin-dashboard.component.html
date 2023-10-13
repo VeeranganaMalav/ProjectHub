@@ -1,0 +1,50 @@
+<div id="admin-dashboard">
+    <!-- --------------------------- SIDEBAR --------------------------------- -->
+    <div id="sidebar">
+        <h2>ADMIN</h2>
+
+        <!-- ----------------------- HOME --------------------------- -->
+        <div class="sidebar-options" (click)="selectMenuItem('home')" [class.selected]="selectedMenuItem === 'home'">
+            <i class="fa-solid fa-house icons-outlined" [class.selected]="selectedMenuItem === 'home'"></i>
+            <span class="sidebar-text" [class.selected]="selectedMenuItem === 'home'">HOME</span>
+        </div>
+
+        <!-- ----------------------- LIST PROJECTS --------------------------- -->
+        <div  class="sidebar-options" (click)="selectMenuItem('projects')"  [class.selected]="selectedMenuItem === 'projects'">
+            <i class="fa-solid fa-folder-open icons-outlined" [class.selected]="selectedMenuItem === 'projects'"></i>
+            <span class="sidebar-text" [class.selected]="selectedMenuItem === 'projects'">PROJECTS</span>
+        </div>
+
+        <!-- ----------------------- LIST USERS --------------------------- -->
+        <div  class="sidebar-options" (click)="selectMenuItem('users')">
+            <i class="fa-solid fa-user-group icons-outlined" [class.selected]="selectedMenuItem === 'users'"></i>
+            <span class="sidebar-text" [class.selected]="selectedMenuItem === 'users'">USERS</span>
+        </div>
+        
+        
+        <!-- ----------------------- LIST TEAMS --------------------------- -->
+        <div  class="sidebar-options" (click)="selectMenuItem('teams')">
+            <i class="fa-solid fa-users icons-outlined" [class.selected]="selectedMenuItem === 'teams'"></i>
+            <span class="sidebar-text" [class.selected]="selectedMenuItem === 'teams'">TEAMS</span>
+        </div>
+
+        <!-- ----------------------- PROFILE --------------------------- -->
+        <div  class="sidebar-options" (click)="selectMenuItem('profile')">
+            <!-- <i class="fa-regular fa-user icons-outlined"></i> -->
+            <i class="fa-solid fa-user-gear icons-outlined" [class.selected]="selectedMenuItem === 'profile'"></i>
+            <span class="sidebar-text" [class.selected]="selectedMenuItem === 'profile'">PROFILE</span>
+        </div>
+
+        <!-- ----------------------- LOGOUT --------------------------- -->
+        <div  class="sidebar-options" (click)="selectMenuItem('logout')">
+            <i class="fa-solid fa-arrow-right-from-bracket icons-outlined" [class.selected]="selectedMenuItem === 'logout'"></i>
+            <span class="sidebar-text" [class.selected]="selectedMenuItem === 'logout'">LOGOUT</span>
+        </div>
+    </div>
+
+
+    <!-- ------------------------- OTHER CONTENT ----------------------------- -->
+    <div id="other-content">
+
+    </div>
+</div>

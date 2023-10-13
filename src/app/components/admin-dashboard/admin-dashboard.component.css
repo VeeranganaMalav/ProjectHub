@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#admin-dashboard{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+#sidebar{
+    /* background-color: orange; */
+    background-color: rgb(230, 148, 62);
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    gap: 20px;
+    font-size: 18px;
+}
+
+#sidebar>h2{
+    text-align: center;
+    padding: 70px 0px 50px 0px;
+    color: rgb(72, 71, 71);
+}
+
+.sidebar-options{
+    display: flex;
+    width: 78%;
+    padding: 20px 30px;
+    cursor: pointer;
+}
+
+.sidebar-options:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-options.selected{
+    background-color: rgba(52, 47, 47, 0.1);
+}
+
+.icons-outlined{
+    color: white;
+}
+
+.icons-outlined.selected{
+    color: rgb(72, 71, 71);
+}
+
+.sidebar-text{
+    color: white;
+    padding-left: 25px;
+}
+
+.sidebar-text.selected{
+    color: rgb(72, 71, 71);
+}
+
+#other-content{
+    background-color: rgb(179, 176, 174);
+    width: 80%;
+}

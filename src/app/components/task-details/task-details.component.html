@@ -1,0 +1,11 @@
+<div *ngIf="task">
+    <h2>Task Details</h2>
+    <h4>Task Description :- {{ task.description }}</h4>
+    <p>Due Date :-{{ task.dueDate }}</p>
+    <p>Priority :- {{ task.priority }}</p>
+    <h4 *ngIf="project">Project:- {{ project.name }}</h4>
+    <h4 *ngIf="assignedTeamMembers && assignedTeamMembers.length > 0">Assigned Team Members :- </h4>
+    <ul *ngFor="let member of assignedTeamMembers">
+        <li>{{ member.name }}</li>
+    </ul>
+</div>

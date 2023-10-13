@@ -1,1 +1,7 @@
-<p>task-management works!</p>
+<h2>Task List</h2>
+<ul *ngFor="let task of tasks">
+  <li>
+    {{ task.title }}
+    <button (click)="viewTaskDetails(task._id)">View Task Details</button>
+  </li>
+</ul>

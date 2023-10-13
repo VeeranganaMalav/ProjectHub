@@ -1,14 +1,16 @@
+import { Project } from "./project.interface";
 import { User } from "./user.interface";
 
 export interface Task {
-    id?: number; // Optional for task creation
+    _id?: string; // Optional for task creation
     title: string;
     description: string;
     dueDate: Date;
     priority: TaskPriority;
     status: TaskStatus;
-    assignedTeamMembers: User[];
-    subTasks?: Task[];
+    assignedTeamMembers?: User[];
+    subTasks?: string[];
+    project: Project;
 }
 
 export enum TaskPriority {
