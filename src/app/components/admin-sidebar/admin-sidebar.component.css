@@ -1,4 +1,4 @@
-/* *{
+*{
     margin: 0px;
     padding: 0px;
 }
@@ -7,14 +7,16 @@
     display: flex;
     width: 100%;
     height: 100vh;
-} */
+}
 
-/* background-color: orange; */
-/* #sidebar{
+#sidebar{
+    /* background-color: orange; */
     background-color: rgb(230, 148, 62);
     display: flex;
     flex-direction: column;
-    width: 20%;
+    /* width: 20%; */
+    width: 140%;
+    height: 100vh;
     gap: 20px;
     font-size: 18px;
 }
@@ -56,15 +58,3 @@
 .sidebar-text.selected{
     color: rgb(72, 71, 71);
 }
-
-#other-content{
-    background-color: rgb(179, 176, 174);
-    width: 80%;
-    padding: 30px 50px;
-} */
-
-#other-content{
-    /* background-color: rgb(179, 176, 174);
-    width: 80%;
-    padding: 30px 50px; */
-} 

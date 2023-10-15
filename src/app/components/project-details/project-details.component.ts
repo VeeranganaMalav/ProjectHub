@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Project } from 'src/app/interfaces/project.interface';
 import { User } from 'src/app/interfaces/user.interface';
+import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { ProjectDetailsService, SingleProjectApiResponse } from 'src/app/services/project-details.service';
 import { SingleUserApiResponse, UserService } from 'src/app/services/user.service';
 
@@ -16,7 +17,13 @@ export class ProjectDetailsComponent implements OnInit{
     projectManager!: User;
     teamMembers: User[] = [];
 
-    constructor(private route: ActivatedRoute, private projectDetailsService: ProjectDetailsService, private userService: UserService){}
+    user: User | null;
+
+    constructor(private route: ActivatedRoute, private projectDetailsService: ProjectDetailsService, private userService: UserService, private authService: AuthServiceService, private router: Router){
+      this.user = authService.getUser();
+
+      console.log(this.user?.role);
+    }
 
     ngOnInit(): void {
       this.route.params.subscribe((params) => {
@@ -53,5 +60,20 @@ export class ProjectDetailsComponent implements OnInit{
           }
         })
       })
+    }
+
+    goBack(userRole: string | undefined) : void {
+      if(userRole === 'Admin'){
+        this.router.navigate(['/admin-dashboard/projects'])
+      }
+      else if(userRole === 'Project Manager'){
+        this.router.navigate(['/project-manager-dashboard/projects'])
+      }
+      else if(userRole === 'Team Member'){
+        this.router.navigate(['/team-memeber-dashboard/projects'])
+      }
+      else{
+        this.router.navigate(['/login'])
+      }
     }
 }

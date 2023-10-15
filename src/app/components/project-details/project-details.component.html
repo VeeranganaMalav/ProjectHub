@@ -1,11 +1,20 @@
-<div *ngIf="project">
-    <h2>Project Details</h2>
-    <h4>Project Description :- {{ project.description }}</h4>
-    <p>Start Date :-{{ project.startDate }}</p>
-    <p>End Date :- {{ project.endDate }}</p>
-    <h4 *ngIf="projectManager">Project Manager :- {{ projectManager.name }}</h4>
-    <h4 *ngIf="teamMembers && teamMembers.length > 0">Team Members :- </h4>
-    <ul *ngFor="let member of teamMembers">
-        <li>{{ member.name }}</li>
-    </ul>
+<div *ngIf="project" id="project-details">
+    <!-- Admin-specific sidebar -->
+    <!-- <ng-container class="sidebar-component">
+        <app-admin-sidebar *ngIf="user?.role === 'Admin'"></app-admin-sidebar>
+    </ng-container> -->
+
+
+    <div id="single-project-content">
+        <i class="fa-solid fa-arrow-left-long" id="back-arrow" (click)="goBack(user?.role)"></i>
+        <h1>{{ project.name }}</h1>
+        <p class="text-large italics">{{ project.description }}</p>
+        <p><span class="bold-text">Start Date :-</span> {{ project.startDate }}</p>
+        <p><span class="bold-text">End Date :-</span> {{ project.endDate }}</p>
+        <h3 *ngIf="projectManager">Project Manager :- {{ projectManager.name }}</h3>
+        <h3 *ngIf="teamMembers && teamMembers.length > 0">Team Members :- </h3>
+        <ul *ngFor="let member of teamMembers">
+            <li class="text-medium">{{ member.name }}</li>
+        </ul>
+    </div>
 </div>

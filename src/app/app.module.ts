@@ -18,6 +18,13 @@ import { LoginComponent } from './components/login/login.component';
 import { ProjectManagerDashboardComponent } from './components/project-manager-dashboard/project-manager-dashboard.component';
 import { TeamMemberDashboardComponent } from './components/team-member-dashboard/team-member-dashboard.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { AdminHomeContentComponent } from './components/admin-home-content/admin-home-content.component';
+import { AdminProjectsContentComponent } from './components/admin-projects-content/admin-projects-content.component';
+import { AdminUsersContentComponent } from './components/admin-users-content/admin-users-content.component';
+import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
+import { AdminProjectDetailsContentComponent } from './components/admin-project-details-content/admin-project-details-content.component';
+import { AddProjectComponent } from './components/add-project/add-project.component';
+import { EditProjectComponent } from './components/edit-project/edit-project.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +42,14 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
     LoginComponent,
     ProjectManagerDashboardComponent,
     TeamMemberDashboardComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AdminHomeContentComponent,
+    AdminProjectsContentComponent,
+    AdminUsersContentComponent,
+    AdminSidebarComponent,
+    AdminProjectDetailsContentComponent,
+    AddProjectComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

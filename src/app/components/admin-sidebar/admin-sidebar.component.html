@@ -1,0 +1,43 @@
+<!-- --------------------------- SIDEBAR --------------------------------- -->
+<div id="sidebar">
+    <h2>ADMIN</h2>
+
+    <!-- ----------------------- HOME --------------------------- -->
+    <div class="sidebar-options" (click)="redirectTo('home')" [class.selected]="selectedMenuItem === 'home'">
+        <i class="fa-solid fa-house icons-outlined"></i>
+        <span class="sidebar-text">HOME</span>
+    </div>
+
+    <!-- ----------------------- LIST PROJECTS --------------------------- -->
+    <div  class="sidebar-options" (click)="redirectTo('projects')" [class.selected]="selectedMenuItem === 'projects'">
+        <i class="fa-solid fa-folder-open icons-outlined"></i>
+        <span class="sidebar-text">PROJECTS</span>
+    </div>
+
+    <!-- ----------------------- LIST USERS --------------------------- -->
+    <div  class="sidebar-options" (click)="redirectTo('users')" [class.selected]="selectedMenuItem === 'users'">
+        <i class="fa-solid fa-user-group icons-outlined"></i>
+        <span class="sidebar-text">USERS</span>
+    </div>
+    
+    
+    <!-- ----------------------- LIST TEAMS --------------------------- -->
+    <div  class="sidebar-options" (click)="redirectTo('teams')" [class.selected]="selectedMenuItem === 'teams'">
+        <i class="fa-solid fa-users icons-outlined"></i>
+        <span class="sidebar-text">TEAMS</span>
+    </div>
+
+    <!-- ----------------------- PROFILE --------------------------- -->
+    <div  class="sidebar-options" (click)="redirectTo('profile')" [class.selected]="selectedMenuItem === 'profile'">
+        <!-- <i class="fa-regular fa-user icons-outlined"></i> -->
+        <i class="fa-solid fa-user-gear icons-outlined"></i>
+        <span class="sidebar-text">PROFILE</span>
+    </div>
+
+    <!-- ----------------------- LOGOUT --------------------------- -->
+    <div  class="sidebar-options" (click)="logoutAdmin()">
+        <i class="fa-solid fa-arrow-right-from-bracket icons-outlined"></i>
+        <span class="sidebar-text">LOGOUT</span>
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div id="admin-home">
+
+    <!-- Admin-specific sidebar -->
+    <ng-container class="sidebar-component">
+        <app-admin-sidebar *ngIf="user?.role === 'Admin'"></app-admin-sidebar>
+    </ng-container>
+
+
+    <!-- -------------------------- NAVBAR ------------------------------- -->
+    <div id="home-dashboard-container">
+        <div id="nav">
+            <p id="nav-greeting">Hello, Admin!</p>
+    
+            <div id="profile-pic">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2940&q=80" alt="user-image">
+                <p>User</p>
+            </div>
+        </div>
+
+        
+    </div>
+</div>

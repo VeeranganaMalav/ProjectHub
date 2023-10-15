@@ -1,7 +1,22 @@
-<h2>Project List</h2>
-<ul *ngFor="let project of projects">
-  <li>
-    {{ project.name }}
-    <button (click)="viewProjectDetails(project._id)">View Project Details</button>
-  </li>
-</ul>
+<!-- <div *ngFor="let project of projects" id="project-list">
+  <div class="project-list-item">
+    <p><span class="bold-text">Name :-</span> {{ project.name }}</p>
+    <p><span class="bold-text">Start Date :-</span> {{ project.startDate }}</p>
+    <p><span class="bold-text">End Date :-</span> {{ project.endDate }}</p>
+    <button (click)="viewProjectDetails(project._id)" class="view-project-btn">View Project Details</button>
+  </div>
+</div> -->
+
+
+<div id="project-container">
+  <div *ngFor="let project of projects" id="project-list">
+    <div class="project-list-item">
+      <p><span class="bold-text">Name :-</span> {{ project.name }}</p>
+      <p><span class="bold-text">Start Date :-</span> {{ project.startDate }}</p>
+      <p><span class="bold-text">End Date :-</span> {{ project.endDate }}</p>
+      <button (click)="viewProjectDetails(project._id)" class="view-project-btn">View Project Details</button>
+    </div>
+  </div>
+</div>
+
+

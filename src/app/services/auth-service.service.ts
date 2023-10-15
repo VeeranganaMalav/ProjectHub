@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { User } from '../interfaces/user.interface';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+interface LogoutResponse {
+  message: string;
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +15,9 @@ import { Router } from '@angular/router';
 export class AuthServiceService {
   private token: string | null = null;
   private user: User | null = null;
+  private logoutApiUrl = "http://localhost:8081/users/logout";
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient) {
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
       this.token = JSON.parse(storedToken);
@@ -25,6 +33,7 @@ export class AuthServiceService {
     const storedUser = localStorage.getItem('user');
     if(storedUser) {
       this.user = JSON.parse(storedUser);
+      return this.user;
     }
     return null;
   }
@@ -38,6 +47,7 @@ export class AuthServiceService {
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
       this.token = JSON.parse(storedToken);
+      return this.token;
     }
     return null;
   }
@@ -53,10 +63,13 @@ export class AuthServiceService {
     return !!this.token && !!this.user;
   }
 
-  logout(): void {
+  logout(accessToken: string | null): void {
+    this.http.post<LogoutResponse>(`${this.logoutApiUrl}`, accessToken);
+
     // Clear user-related data and navigate to the login page.
     this.clearToken();
     this.router.navigate(['/login']);
+
   }
   
 

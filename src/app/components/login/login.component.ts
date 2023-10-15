@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
 
         // Handle successful login based on user role.
         if (res.user.role === 'Admin') {
-          this.router.navigate(['/admin-dashboard']);
+          this.router.navigate(['/admin-dashboard/home']);
         }
         else if (res.user.role === 'Project Manager') {
           this.router.navigate(['/project-manager-dashboard']);

@@ -1,0 +1,86 @@
+<!-- <div id="admin-project"> -->
+    <!-- -------------------------- NAVBAR ------------------------------- -->
+    <!-- <h1>Projects</h1>
+
+    <app-project-management></app-project-management> -->
+
+<!-- </div> -->
+
+
+
+
+
+
+<div id="admin-project">
+
+    <!-- Admin-specific sidebar -->
+    <ng-container class="sidebar-component">
+        <app-admin-sidebar *ngIf="user?.role === 'Admin'"></app-admin-sidebar>
+    </ng-container>
+
+
+    <!-- -------------------------- NAVBAR ------------------------------- -->
+    <div id="admin-project-container">
+        <div id="project-topbar">
+            <h1>Projects</h1>
+
+            <div id="project-add-edit-btn">
+                <button id="add-project-btn" (click)="changeProjectComponent('add-project-form')">Add Project</button>
+                <button id="edit-project-btn" (click)="changeProjectComponent('edit-project-form')">Edit Project</button>
+            </div>
+        </div>
+
+
+        <div *ngIf="displayProjectComponent === 'add-project-form'">
+            <form [formGroup]="projectForm" (ngSubmit)="onAddFormSubmit()" id="add-project-form">
+                <label for="name" class="input-label">Project Name:</label>
+                <input type="text" id="name" formControlName="name" required class="input-box">
+                <div *ngIf="projectForm.get('name')?.invalid && projectForm.get('name')?.touched">
+                    <div *ngIf="projectForm.get('name')?.hasError('required')" class="validation-error">Project name is required.</div>
+                </div>
+              
+                <label for="description" class="input-label">Description:</label>
+                <textarea id="description" formControlName="description"></textarea>
+                <div *ngIf="projectForm.get('description')?.invalid && projectForm.get('description')?.touched">
+                    <div *ngIf="projectForm.get('description')?.hasError('required')" class="validation-error">Project description is required.</div>
+                </div>
+              
+                <label for="startDate" class="input-label">Start Date:</label>
+                <input type="date" id="startDate" formControlName="startDate" class="input-box" required>
+                <div *ngIf="projectForm.get('startDate')?.invalid && projectForm.get('startDate')?.touched">
+                    <div *ngIf="projectForm.get('startDate')?.hasError('required')" class="validation-error">Project start date is required.</div>
+                </div>
+              
+                <label for="endDate" class="input-label">End Date:</label>
+                <input type="date" id="endDate" formControlName="endDate" class="input-box" required>
+                <div *ngIf="projectForm.get('endDate')?.invalid && projectForm.get('endDate')?.touched">
+                    <div *ngIf="projectForm.get('endDate')?.hasError('required')" class="validation-error">Project end date is required.</div>
+                </div>
+              
+
+                <label for="projectManager" class="input-label">Project Manager:</label>
+                <select id="projectManager" formControlName="projectManager" class="input-box" required>
+                    <option value="">Select Project Manager</option>
+                    <option *ngFor="let projectManager of projectManagersArray" [ngValue]="projectManager._id">{{ projectManager.name }}</option>
+                </select>
+                <div *ngIf="projectForm.get('projectManager')?.invalid && projectForm.get('projectManager')?.touched">
+                    <div *ngIf="projectForm.get('projectManager')?.hasError('required')" class="validation-error">Project Manager is required.</div>
+                </div>
+
+                <label for="teamMembers" class="input-label">Team Members:</label>
+                <select id="teamMembers" formControlName="teamMembers" multiple class="input-box" required>
+                    <option *ngFor="let teamMember of teamMembersArray" [ngValue]="teamMember._id">{{ teamMember.name }}</option>
+                </select>
+                <div *ngIf="projectForm.get('teamMembers')?.invalid && projectForm.get('teamMembers')?.touched">
+                    <div *ngIf="projectForm.get('teamMembers')?.hasError('required')" class="validation-error">Project team member(s) is/are required.</div>
+                </div>
+                
+
+                <button type="submit" id="create-project-btn">Create Project</button>
+              </form>              
+        </div>
+    
+        <app-project-management *ngIf="displayProjectComponent === 'project-cards'"></app-project-management>
+    </div>
+
+</div>

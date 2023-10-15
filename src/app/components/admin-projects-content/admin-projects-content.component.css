@@ -1,0 +1,107 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#admin-project{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+#admin-project-container{
+    display: flex;
+    flex-direction: column;
+    width: 82%;
+    margin-left: 76px;
+    /* background-color: gray; */
+    background-color: rgb(179, 176, 174);
+    padding: 30px 50px;
+}
+
+#project-topbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+#project-add-edit-btn{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+#add-project-btn{
+    font-size: 18px;
+    width: 40%;
+    color: white;
+    font-weight: 500;
+    background-color: orange;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+
+#edit-project-btn{
+    background-color: orange;
+    width: 40%;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    border: 2px solid gray;
+    border-radius: 5px;
+    padding: 8px 10px;
+
+}
+
+
+#add-project-form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 30px;
+    padding: 30px 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+#description{
+    height: 100px;
+}
+
+.input-box{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.input-label{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+#create-project-btn{
+    background-color: rgb(212, 145, 74);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 30%;
+    margin: auto;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+
+.validation-error{
+    font-size: 14px;
+    color: red;
+}
+
+
+
+#teamMembers{
+    width: 280px; /* Adjust the width as needed */
+    padding: 5px;
+}

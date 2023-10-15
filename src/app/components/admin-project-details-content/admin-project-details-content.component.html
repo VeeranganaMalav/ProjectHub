@@ -1,0 +1,14 @@
+<div id="admin-project-details">
+
+    <!-- Admin-specific sidebar -->
+    <ng-container class="sidebar-component">
+        <app-admin-sidebar *ngIf="user?.role === 'Admin'"></app-admin-sidebar>
+    </ng-container>
+
+
+    <!-- -------------------------- NAVBAR ------------------------------- -->
+    <div id="admin-project-details-container">
+        <app-project-details></app-project-details>
+    </div>
+
+</div>
